@@ -99,7 +99,6 @@
             border-bottom: 1px solid #E5E5E5;
             height: 10px;
             width: 300px;
-
             margin-bottom: 10px;
         }
 
@@ -120,6 +119,7 @@
             color: #fff;
             text-transform: uppercase;
             letter-spacing: 2px;
+            cursor: pointer;
         }
 
         .login .inner-wrap .login-google {
@@ -217,6 +217,10 @@
 
                     <div>
                         <span class="forgot-pass"><a href="#">Forgot Password?</a></span>
+                        <%String message = (String)request.getAttribute("message");%>
+                        <% if(message != null) { %>
+                            <span><%= message %></span> 
+                        <% } %>
                         <button class="button button-one" id="login" type="submit">Login</button>
                         <input type="hidden" name="next" value="" />
                     </div>

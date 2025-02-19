@@ -146,7 +146,7 @@
 
         <div class="items">
             <a href="#" class="auth-link">Đăng ký</a>
-            <a href="#" class="auth-link">Đăng nhập</a>
+            <a href="./login" class="auth-link">Đăng nhập</a>
             <div class="vertical-line"></div>
             <a href="#">
                 <i class="fa-regular fa-bell"></i>
