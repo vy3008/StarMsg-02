@@ -1,5 +1,6 @@
 package controller;
 
+import dao.UserDAO;
 import jakarta.servlet.RequestDispatcher;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -7,6 +8,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import model.User;
 
 
 public class ProcessLogin extends HttpServlet {
@@ -43,14 +45,13 @@ public class ProcessLogin extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        System.out.println(username +  " " + password);
-        if(username.equals("quan") && password.equals("123")) {
-            response.sendRedirect("./home"); //Chuyen huong vao duong dan home
-        } else { //Dang nhap that bai thi no van o trang login nhung hien cai message
-            
-            request.setAttribute("message", "Login failed!"); //Khoi tao mot cai bien va luu no vao trong request 
-            //message = login failed (gan message = login failed) 
-            
+        User user = UserDAO.handleLogin(username, password);
+        System.out.println(user);
+        if (user != null) {
+            response.sendRedirect("./home");
+        } else {
+            // String message = "login failed";
+            request.setAttribute("message", "Login failed!");
             RequestDispatcher dis = request.getRequestDispatcher("login.jsp");
             dis.forward(request, response);
         }
