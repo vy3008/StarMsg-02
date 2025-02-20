@@ -180,8 +180,8 @@
         </div>
 
         <div class="items">
-            <a href="#" class="auth-link">Đăng ký</a>
-            <a href="./login" class="auth-link">Đăng nhập</a>
+            <a href="./register" class="auth-link">Register</a>
+            <a href="./login" class="auth-link">Login</a>
             <div class="vertical-line"></div>
             <a href="#">
                 <i class="fa-regular fa-bell"></i>

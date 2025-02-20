@@ -36,7 +36,7 @@ public class ProcessLogin extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         RequestDispatcher dis = request.getRequestDispatcher("login.jsp");
-        dis.forward(request, response);
+        dis.forward(request, response); //forward de hien thi giao dien login.jsp
     }
     
     @Override
@@ -46,7 +46,6 @@ public class ProcessLogin extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         User user = UserDAO.handleLogin(username, password);
-        System.out.println(user);
         if (user != null) {
             response.sendRedirect("./home");
         } else {

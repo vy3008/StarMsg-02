@@ -1,3 +1,4 @@
+
 package model;
 
 public class User {
@@ -17,8 +18,15 @@ public class User {
         this.birthday = birthday;
     }
 
-    
+    public User(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
 
+    public String getPassword() {
+        return password;
+    }
+    
     public int getId() {
         return id;
     }

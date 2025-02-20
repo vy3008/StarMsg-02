@@ -34,4 +34,33 @@ public class UserDAO {
         }
         return null;
     }
+    
+    
+    public static boolean isExistUsername(String username) {
+        try ( Connection c = openConnection()) {
+            String select = String.format("select * from users where username = '%s'", username);
+            PreparedStatement ps = c.prepareStatement(select);
+            ResultSet rs = ps.executeQuery();
+            if(rs.next()){
+                return true;
+            }
+            return false;
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return true;
+    }
+    
+    
+    public static boolean insertUser(User user) {
+        try ( Connection c = openConnection()) {
+            String insert = String.format("INSERT INTO USERS(username, password) VALUES ('%s', '%s');", user.getUsername(), user.getPassword());
+            PreparedStatement ps = c.prepareStatement(insert);
+            int row = ps.executeUpdate(insert);
+            return row >= 1 ? true : false;
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return true;
+    }
 }
