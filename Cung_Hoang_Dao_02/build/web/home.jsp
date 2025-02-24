@@ -40,7 +40,13 @@
         }
 
         .header {
-            padding: 30px;
+            padding: 10px;
+
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: white;
         }
 
         .header .inner-head {
@@ -210,6 +216,10 @@
 
     <!-- Menu -->
     <style>
+        .menu {
+            margin-top: 100px;
+        }
+
         .menu .inner-list {
             display: flex;
             justify-content: center;
