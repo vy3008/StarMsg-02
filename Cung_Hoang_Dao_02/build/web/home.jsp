@@ -10,446 +10,503 @@
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap" rel="stylesheet">
 
-    <title>Hello, world!</title>
+    <title>Home</title>
+</head>
 
+<body>
+
+    <!-- Header -->
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-
         :root {
             --color-one: #BA9545;
             --color-text: #232323;
             --bg-1: #F1EDE8;
 
             --font: 'Gilda Display', serif;
-            --font-2: 'Roboto', sans-serif;
+            --font-2: 'Roboto', sans-serif
         }
 
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            color: var(--color-text);
-        }
-
-        a {
-            text-decoration: none;
-        }
-    </style>
-</head>
-
-<body>
-    <!-- Header -->
-    <style>
         .header {
+            padding: 30px;
+        }
+
+        .header .inner-head {
             display: flex;
             justify-content: space-between;
-            padding: 10px 20px;
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0);
-            font-family: var(--font);
-
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            background-color: white;
-        }
-
-        .header .inner-menu-mobi {
-            display: none;
-        }
-
-        .menu-icon-2 {
-            display: none;
-        }
-
-        .header .menu-icon {
-            display: flex;
-            font-size: 20px;
-            cursor: pointer;
-            background: #000;
-            color: #fff;
-            cursor: pointer;
             align-items: center;
-            padding: 0 15px;
         }
 
+        .header .inner-head .inner-menu {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #000;
+            width: 40px;
+            height: 40px;
+            color: #fff;
+        }
 
-        .header .logo {
+        .header .inner-head .inner-logo span {
             font-family: 'Dancing Script', cursive;
             font-size: 50px;
             font-weight: bold;
             color: #000;
-            cursor: pointer;
         }
 
-        .header .items {
+        .header .inner-head .inner-info {
             display: flex;
-            align-items: center;
         }
 
-        .auth-link {
-            font-size: 13px;
+        .header .inner-head .inner-info .inner-sign-up a {
             color: #7A7A7A;
-            margin: 0;
+            text-decoration: none;
+            font-family: var(--font);
         }
 
-        .auth-link:first-child::after {
+        .header .inner-head .inner-info .inner-login a {
+            color: #7A7A7A;
+            text-decoration: none;
+            font-family: var(--font);
+        }
+
+        .header .inner-head .inner-info .inner-sign-up::after {
             content: "/";
             margin-right: 5px;
             margin-left: 5px;
-            font-style: italic;
-        }
-
-        .auth-link:last-child::after {
-            content: " ";
-        }
-
-        .header .vertical-line {
-            border-left: 1px solid #7c7c7c9d;
-            height: 40px;
-            margin: 0 20px;
-            display: inline-block;
-        }
-
-        .items i {
-            font-size: 20px;
-            cursor: pointer;
             color: #7A7A7A;
         }
 
+        .header .inner-head .inner-info .inner-login::after {
+            content: "|";
+            margin-left: 10px;
+            margin-right: 10px;
+            color: #7A7A7A;
+        }
+
+        .header .inner-head .inner-info .inner-notification {
+            position: relative;
+        }
+
+        .header .inner-head .inner-info .inner-notification a {
+            color: #7A7A7A;
+            font-size: 20px;
+        }
+
+        .header .inner-head .inner-info .inner-notification::after {
+            content: "0";
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            top: 15px;
+            left: 10px;
+            border-radius: 50%;
+            background: #F1EDE8;
+            font-size: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .header .inner-head .inner-menu-mobi {
+            display: none;
+        }
+
+        .header .inner-head .inner-logo-mobi {
+            display: none;
+        }
 
         @media (max-width: 991.98px) {
-            .header .menu-icon {
-                display: none;
-            }
-
-            .header .logo {
-                display: none;
-            }
-
-            .header .items {
-                display: none;
-            }
-
-            .header .inner-menu-mobi {
+            .header .inner-head .inner-logo-mobi {
                 display: block;
             }
 
-            .header .menu-icon-2 {
+            .header .inner-head .inner-logo-mobi span {
+                font-family: 'Dancing Script', cursive;
+                font-size: 50px;
+                font-weight: bold;
+                color: #000;
+            }
+
+            .header .inner-head .inner-menu {
+                display: none;
+            }
+
+            .header .inner-head .inner-logo {
+                display: none;
+            }
+
+            .header .inner-head .inner-info {
+                display: none;
+            }
+
+            .header .inner-head .inner-menu-mobi {
                 display: flex;
-                font-size: 20px;
-                cursor: pointer;
-                background: #000;
-                color: #fff;
-                cursor: pointer;
+                justify-content: center;
                 align-items: center;
-                padding: 0 15px;
+                background: #000;
+                width: 40px;
+                height: 40px;
+                color: #fff;
             }
         }
     </style>
     <header class="header">
-
-        <a href="#" class="inner-menu-mobi">
-            <img src="https://astro-charts.com/client/common/images/site/logo-mobile.d88047e2a142.png" alt="logo">
-        </a>
-
-        <div class="menu-icon">
-            <i class="fa-solid fa-bars"></i>
-        </div>
-
-        <div class="logo">StarMsg</div>
-
-        <div class="menu-icon-2">
-            <i class="fa-solid fa-bars"></i>
-        </div>
-
-        <div class="items">
-            <a href="./register" class="auth-link">Register</a>
-            <a href="./login" class="auth-link">Login</a>
-            <div class="vertical-line"></div>
-            <a href="#">
-                <i class="fa-regular fa-bell"></i>
-            </a>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="inner-head">
+                        <div class="inner-logo-mobi">
+                            <a href="#">
+                                <span>AC</span>
+                            </a>
+                        </div>
+                        <div class="inner-menu">
+                            <i class="fa-solid fa-bars"></i>
+                        </div>
+                        <div class="inner-logo">
+                            <a href="#">
+                                <span>StarMsg</span>
+                            </a>
+                        </div>
+                        <div class="inner-info">
+                            <div class="inner-sign-up">
+                                <a href="./register">
+                                    Sign Up
+                                </a>
+                            </div>
+                            <div class="inner-login">
+                                <a href="./login">
+                                    Login
+                                </a>
+                            </div>
+                            <div class="inner-notification">
+                                <a href="#">
+                                    <i class="fa-solid fa-bell"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="inner-menu-mobi">
+                            <i class="fa-solid fa-bars"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
     <!-- End Header -->
 
-    <!-- Section One -->
+    <!-- Menu -->
     <style>
-        .section-one {
-            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
-            padding: 10px 0;
-            margin-top: 100px;
-        }
-
-        .section-one .container .row {
+        .menu .inner-list {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
         }
 
-        .section-one .container .row .inner-item {
-            font-size: 13px;
-            font-family: var(--font-2);
+        .menu .inner-item a {
+            text-decoration: none;
+        }
+
+        .menu .inner-item span {
+            font-family: "Roboto", serif;
             text-transform: uppercase;
-        }
-
-        .section-one .container .inner-item a {
             color: #000;
         }
 
-        @media (max-width: 575.98px) {
-            .section-one {
-                padding: 10px 30px;
+        @media (max-width: 991.98px) {
+            .menu {
+                display: none;
             }
         }
     </style>
+    <div class="menu">
+        <div class="container">
+            <div class="row inner-list">
+                <div class="col-xl-1">
+                    <div class="inner-item">
+                        <a href="#">
+                            <span>Home</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xl-2">
+                    <div class="inner-item">
+                        <a href="#">
+                            <span>Create Chart</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xl-1">
+                    <div class="inner-item">
+                        <a href="#">
+                            <span>Shop</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xl-2">
+                    <div class="inner-item">
+                        <a href="#">
+                            <span>Celebbrity Charts</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xl-2">
+                    <div class="inner-item">
+                        <a href="#">
+                            <span>Resources</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xl-1">
+                    <div class="inner-item">
+                        <a href="#">
+                            <span>Contact</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Menu -->
 
+    <!-- Section One -->
+    <style>
+        .section-one {
+            padding: 50px;
+        }
+
+        .section-one .inner-box {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .section-one .inner-box .inner-content {
+            position: relative;
+            margin-left: 20px;
+            flex: 1;
+        }
+
+        .section-one .inner-box .inner-content .inner-desc {
+            font-family: var(--font);
+        }
+
+        .section-one .inner-box .inner-content .inner-desc::after {
+            position: absolute;
+            content: "";
+            width: 150px;
+            height: 2px;
+            background-color: #E5E5E5;
+            top: 100px;
+            left: 0;
+        }
+
+        .section-one .inner-box .inner-content .inner-title {
+            margin-top: 40px;
+        }
+
+        .section-one .inner-box .inner-content .inner-title a {
+            text-decoration: none;
+        }
+
+        .section-one .inner-box .inner-content .inner-title span {
+            color: #BA9545;
+            text-transform: uppercase;
+            font-family: var(--font-2)
+        }
+
+        .section-one .inner-box .inner-content .inner-title::after {
+            content: "\f061";
+            font-weight: 900;
+            font-family: "Font Awesome 6 Free";
+            color: var(--color-one);
+        }
+
+        @media (max-width: 991.98px) {
+            .section-one .inner-box .inner-image {
+                width: 100%;
+            }
+
+            .section-one .inner-box .inner-content {
+                width: 100%;
+                margin: 0;
+                margin-top: 10px;
+            }
+        }
+
+        @media (max-width: 767.98px) {
+            .section-one .inner-box {
+                margin-bottom: 20px;
+            }
+
+            .section-one .inner-box .inner-image {
+                width: 30%;
+            }
+
+            .section-one .inner-box .inner-content {
+                width: 70%;
+                margin-left: 10px;
+            }
+
+            .section-one .inner-box .inner-content .inner-desc::after {
+                width: 400px;
+                top: -100px;
+            }
+
+            .section-one .inner-box .inner-content .inner-title {
+                margin-top: 20px;
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            .section-one .inner-box {
+                text-align: center;
+            }
+
+            .section-one .inner-box .inner-image {
+                width: 100%;
+            }
+
+            .section-one .inner-box .inner-content {
+                width: 100%;
+            }
+
+            .section-one .inner-box .inner-content .inner-desc::after {
+                width: 400px;
+                top: 55px;
+            }
+        }
+    </style>
     <div class="section-one">
         <div class="container">
             <div class="row">
-                <div class="inner-item">
-                    <a href="#">Home</a>
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                    <div class="inner-box">
+                        <div class="inner-image">
+                            <a href="#">
+                                <img src="https://assets.astro-charts.com/site/woman-hp.webp" alt="">
+                            </a>
+                        </div>
+                        <div class="inner-content">
+                            <div class="inner-desc">
+                                Discover your astrological planetary positions, aspects, patterns, and more.
+                            </div>
+                            <div class="inner-title">
+                                <a href="#">
+                                    <span>Birth Chart</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="inner-item">
-                    <a href="#">Shop</a>
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                    <div class="inner-box">
+                        <div class="inner-image">
+                            <a href="#">
+                                <img src="https://assets.astro-charts.com/site/woman-hp.webp" alt="">
+                            </a>
+                        </div>
+                        <div class="inner-content">
+                            <div class="inner-desc">
+                                Discover your astrological planetary positions, aspects, patterns, and more.
+                            </div>
+                            <div class="inner-title">
+                                <a href="#">
+                                    <span>Birth Chart</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="inner-item">
-                    <a href="#">Contact</a>
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                    <div class="inner-box">
+                        <div class="inner-image">
+                            <a href="#">
+                                <img src="https://assets.astro-charts.com/site/woman-hp.webp" alt="">
+                            </a>
+                        </div>
+                        <div class="inner-content">
+                            <div class="inner-desc">
+                                Discover your astrological planetary positions, aspects, patterns, and more.
+                            </div>
+                            <div class="inner-title">
+                                <a href="#">
+                                    <span>Birth Chart</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- End Section One -->
 
-
     <!-- Section Two -->
     <style>
         .section-two {
-            padding: 40px 0;
-        }
-
-        .section-two .inner-item {
-            display: flex;
-        }
-
-        .section-two .inner-item .inner-image {
-            margin-right: 60px;
-            width: 30%;
-        }
-
-        .section-two .inner-item .inner-content {
-            width: 70%;
-        }
-
-        .section-two .inner-item .horizontal-line {
-            border-bottom: 1px solid #E5E5E5;
-            height: 40px;
-            width: 200px;
-            display: inline-block;
-            margin-bottom: 10px;
-        }
-
-        .section-two .inner-item .inner-desc {
-            font-family: var(--font);
-            font-size: 13px;
-        }
-
-        .section-two .inner-item .inner-title {
-            display: flex;
-            align-items: center;
-        }
-
-
-        .section-two .inner-item .inner-title i {
-            margin-left: 10px;
-        }
-
-        .section-two .inner-item .inner-title .inner-sub-title {
-            font-size: 16px;
-            text-transform: uppercase;
-            margin: 0;
-            font-size: 13px;
-            font-family: var(--font-2);
-            font-weight: 300;
-        }
-
-        .section-two .inner-item .inner-title a .inner-sub-title  {
-            color: var(--color-one);
-        }
-
-        @media (max-width: 1199.98px) {
-            .section-two .list {
-                margin-left: 100px;
-            }
-
-            .section-two .inner-item {
-                display: flex;
-                flex-direction: column;
-            }
-
-            .section-two .inner-item .inner-image {
-                width: 100%;
-            }
-
-            .section-two .inner-item .inner-content {
-                width: 80%;
-            }
-
-            .section-two .inner-item .horizontal-line {
-                margin-top: -200px;
-            }
-
-            .section-two .inner-content .inner-desc {
-                margin-top: 10px;
-            }
-        }
-
-        @media (max-width: 575.98px) {
-            .section-two .inner-item .inner-image {
-                margin-right: 60px;
-                width: 30%;
-            }
-
-            .section-two .inner-item .inner-content {
-                width: 70%;
-            }
-        }
-    </style>
-    <div class="section-two">
-        <div class="container">
-            <div class="row list">
-                <div class="col-xl-4 col-lg-3 col-md-3 col-sm-12 inner-item">
-                    <div class="inner-image">
-                        <a href="#">
-                            <img src="https://assets.astro-charts.com/site/woman-hp.webp" alt="">
-                        </a>
-                    </div>
-                    <div class="inner-content">
-                        <p class="inner-desc">
-                            Discover your astrological planetary positions, aspects, patterns, and more.
-                        </p>
-                        <div class="horizontal-line"></div>
-                        <div class="inner-title">
-                            <a href="#">
-                                <h2 class="inner-sub-title">birth chart</h2>
-                            </a>
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-3 col-md-3 col-sm-12 inner-item">
-                    <div class="inner-image">
-                        <a href="#">
-                            <img src="https://assets.astro-charts.com/site/couple-hp.webp" alt="">
-                        </a>
-                    </div>
-                    <div class="inner-content">
-                        <p class="inner-desc">
-                            Discover your astrological planetary positions, aspects, patterns, and more.
-                        </p>
-                        <div class="horizontal-line"></div>
-                        <div class="inner-title">
-                            <a href="#">
-                                <h2 class="inner-sub-title">synastry chart</h2>
-                            </a>
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-3 col-md-3 col-sm-12 inner-item">
-                    <div class="inner-image">
-                        <a href="#">
-                            <img src="https://assets.astro-charts.com/site/hands-hp.webp" alt="">
-                        </a>
-                    </div>
-                    <div class="inner-content">
-                        <p class="inner-desc">
-                            Discover your astrological planetary positions, aspects, patterns, and more.
-                        </p>
-                        <div class="horizontal-line"></div>
-                        <div class="inner-title">
-                            <a href="#">
-                                <h2 class="inner-sub-title">composite chart</h2>
-                            </a>
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Section Two -->
-
-    <!-- Section Three -->
-    <style>
-        .section-three {
             padding: 30px 0;
             background: var(--bg-1);
         }
 
-        .section-three .inner-middle {
+        .section-two .inner-middle {
             display: flex;
         }
 
-        .section-three .inner-head {
+        .section-two .inner-head {
             text-align: center;
             margin-bottom: 20px;
         }
 
-        .section-three .inner-head .inner-title {
+        .section-two .inner-head .inner-title {
             font-size: 42px;
             font-weight: 400;
             font-family: var(--font);
         }
 
-        .section-three .inner-head .inner-desc {
+        .section-two .inner-head .inner-desc {
             color: #7A7A7A;
             font-family: var(--font);
             font-size: 13px;
         }
 
-        .section-three .inner-middle .inner-item {
+        .section-two .inner-middle .inner-item {
             padding: 20px;
             background: #fff;
         }
 
-        .section-three .inner-middle .inner-item h2 {
+        .section-two .inner-middle .inner-item h2 {
             font-size: 13px;
             letter-spacing: 2px;
             font-weight: 600;
             color: var(--color-one);
         }
 
-        .section-three .inner-middle .inner-item form {
+        .section-two .inner-middle .inner-item form {
             margin-top: 20px;
             font-family: var(--font);
         }
 
-        .section-three .inner-middle .inner-image {
+        .section-two .inner-middle .inner-image {
             width: 90%;
         }
 
-        .section-three .inner-middle .inner-image img {
+        .section-two .inner-middle .inner-image img {
             width: 100%;
         }
 
-        .section-three .inner-middle .inner-item .information-1 {
+        .section-two .inner-middle .inner-item .information-1 {
             width: calc(100% - 155px);
             /* điều chỉnh độ rộng của input */
             padding: 5px;
@@ -459,18 +516,17 @@
             border-radius: 0;
         }
 
-        .section-three .inner-middle .inner-item .information-1:focus {
+        .section-two .inner-middle .inner-item .information-1:focus {
             outline: none;
             border-bottom: 2px solid #000;
         }
 
-        .section-three .inner-middle .inner-item .information-2 {
+        .section-two .inner-middle .inner-item .information-2 {
             margin-left: 65px;
         }
 
-        .section-three .inner-middle .inner-item .information-2 .item-2 {
+        .section-two .inner-middle .inner-item .information-2 .item-2 {
             width: 60px;
-            /* điều chỉnh độ rộng của input */
             padding: 5px;
             margin-bottom: 10px;
             border: none;
@@ -479,29 +535,28 @@
             text-align: center;
         }
 
-        .section-three .inner-middle .inner-item .information-2 .item-2:focus {
+        .section-two .inner-middle .inner-item .information-2 .item-2:focus {
             outline: none;
             border-bottom: 2px solid #000;
         }
 
-        .section-three .inner-middle .inner-item .information-2 .separator {
+        .section-two .inner-middle .inner-item .information-2 .separator {
             display: inline-block;
             transform: rotate(3deg);
-            /*Xoay bao nhiêu độ*/
             margin-right: 5px;
             margin-left: 5px;
         }
 
-        .section-three .inner-middle .inner-item .information-3 {
+        .section-two .inner-middle .inner-item .information-3 {
             margin-left: 200px;
             margin-top: 20px;
         }
 
-        .section-three .inner-middle .inner-item .information-3 input[type="radio"]:checked {
+        .section-two .inner-middle .inner-item .information-3 input[type="radio"]:checked {
             accent-color: black;
         }
 
-        .section-three .inner-middle .button {
+        .section-two .inner-middle .button {
             text-align: center;
             padding: 10px 100px;
             background: #1A291B;
@@ -509,14 +564,13 @@
             letter-spacing: 5px;
             font-weight: 600px;
         }
-        
-        .section-three .inner-middle .button a {
+
+        .section-two .inner-middle .button a {
             color: #fff;
         }
 
-        .section-three .inner-middle .inner-item .information-3 .item-3 {
+        .section-two .inner-middle .inner-item .information-3 .item-3 {
             width: 50px;
-            /* điều chỉnh độ rộng của input */
             padding: 5px;
             margin-bottom: 10px;
             border: none;
@@ -525,29 +579,39 @@
             text-align: center;
         }
 
-        .section-three .inner-middle .inner-item .information-3 .item-3:focus {
+        .section-two .inner-middle .inner-item .information-3 .item-3:focus {
             outline: none;
             border-bottom: 2px solid #000;
         }
 
         @media (max-width: 1199.98px) {
-            .section-three .inner-middle {
+            .section-two .inner-middle {
                 flex-wrap: wrap;
                 margin-left: 200px;
             }
 
-            .section-three .inner-middle .inner-image {
+            .section-two .inner-middle .inner-image {
                 width: 50%;
             }
         }
 
         @media (max-width: 991.98px) {
-            .section-three .inner-middle {
-                margin-left: 100px;
+            .section-two .inner-middle {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .section-two .inner-middle .inner-item .information-1 {
+                border-bottom: none;
+            }
+
+            .section-two .inner-middle .inner-item .information-1:focus {
+                outline: none;
+                border: none;
             }
         }
     </style>
-    <div class="section-three">
+    <div class="section-two">
         <div class="container">
             <div class="row">
                 <div class="inner-head">
@@ -604,15 +668,14 @@
             </div>
         </div>
     </div>
-    <!-- End Section Three -->
-    
+    <!-- End Section Two -->
+
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
         crossorigin="anonymous"></script>
-
 </body>
 
 </html>
