@@ -21,14 +21,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap" rel="stylesheet">
 
     <title>Home</title>
 </head>
 
 <body>
-
-    <!-- Header -->
     <style>
         :root {
             --color-one: #BA9545;
@@ -38,15 +35,17 @@
             --font: 'Gilda Display', serif;
             --font-2: 'Roboto', sans-serif
         }
+    </style>
 
+    <!-- Header -->
+    <style>
         .header {
-            padding: 10px;
-
+            padding: 5px;
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1000;
-            background-color: white;
+            background: #fff;
         }
 
         .header .inner-head {
@@ -221,18 +220,25 @@
         }
 
         .menu .inner-list {
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .menu ul {
             display: flex;
-            justify-content: center;
+            list-style: none;
         }
 
-        .menu .inner-item a {
-            text-decoration: none;
+        .menu ul li {
+            margin-left: 50px;
         }
 
-        .menu .inner-item span {
+        .menu ul li a {
             font-family: "Roboto", serif;
             text-transform: uppercase;
+            text-decoration: none;
             color: #000;
+            font-size: 12px;
         }
 
         @media (max-width: 991.98px) {
@@ -241,50 +247,31 @@
             }
         }
     </style>
+
     <div class="menu">
         <div class="container">
-            <div class="row inner-list">
-                <div class="col-xl-1">
-                    <div class="inner-item">
-                        <a href="#">
-                            <span>Home</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-xl-2">
-                    <div class="inner-item">
-                        <a href="#">
-                            <span>Create Chart</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-xl-1">
-                    <div class="inner-item">
-                        <a href="#">
-                            <span>Shop</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-xl-2">
-                    <div class="inner-item">
-                        <a href="#">
-                            <span>Celebbrity Charts</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-xl-2">
-                    <div class="inner-item">
-                        <a href="#">
-                            <span>Resources</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-xl-1">
-                    <div class="inner-item">
-                        <a href="#">
-                            <span>Contact</span>
-                        </a>
-                    </div>
+            <div class="row">
+                <div class="inner-list">
+                    <ul>
+                        <li>
+                            <a href="#">Home</a>
+                        </li>
+                        <li>
+                            <a href="#">Create Chart</a>
+                        </li>
+                        <li>
+                            <a href="#">Shop</a>
+                        </li>
+                        <li>
+                            <a href="#">Celebbrity</a>
+                        </li>
+                        <li>
+                            <a href="#">Resources</a>
+                        </li>
+                        <li>
+                            <a href="#">Contact</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -310,6 +297,7 @@
 
         .section-one .inner-box .inner-content .inner-desc {
             font-family: var(--font);
+            font-size: 16px;
         }
 
         .section-one .inner-box .inner-content .inner-desc::after {
@@ -333,7 +321,8 @@
         .section-one .inner-box .inner-content .inner-title span {
             color: #BA9545;
             text-transform: uppercase;
-            font-family: var(--font-2)
+            font-family: var(--font-2);
+            font-size: 16px;
         }
 
         .section-one .inner-box .inner-content .inner-title::after {
@@ -371,7 +360,7 @@
 
             .section-one .inner-box .inner-content .inner-desc::after {
                 width: 400px;
-                top: -100px;
+                top: 60px;
             }
 
             .section-one .inner-box .inner-content .inner-title {
@@ -398,6 +387,7 @@
             }
         }
     </style>
+
     <div class="section-one">
         <div class="container">
             <div class="row">
@@ -470,209 +460,188 @@
             background: var(--bg-1);
         }
 
-        .section-two .inner-middle {
-            display: flex;
+        .section-two .inner-top {
+            text-align: center;
+            margin-bottom: 30px;
         }
 
-        .section-two .inner-head {
-            text-align: center;
+        .section-two .inner-top .inner-title {
+            font-size: 32px;
+            font-family: var(--font);
             margin-bottom: 20px;
         }
 
-        .section-two .inner-head .inner-title {
-            font-size: 42px;
-            font-weight: 400;
-            font-family: var(--font);
-        }
-
-        .section-two .inner-head .inner-desc {
+        .section-two .inner-top .inner-desc {
+            font-size: 12px;
+            max-width: 600px;
+            margin: 0 auto;
             color: #7A7A7A;
-            font-family: var(--font);
-            font-size: 13px;
+            line-height: 20px;
         }
 
-        .section-two .inner-middle .inner-item {
-            padding: 20px;
+        .section-two .inner-form {
+            padding: 50px 20px;
             background: #fff;
         }
 
-        .section-two .inner-middle .inner-item h2 {
-            font-size: 13px;
-            letter-spacing: 2px;
-            font-weight: 600;
+        .section-two .inner-form h4 {
             color: var(--color-one);
+            font-family: var(--font-2);
+            font-size: 12px;
+            text-transform: uppercase;
         }
 
-        .section-two .inner-middle .inner-item form {
-            margin-top: 20px;
+        .section-two .inner-form .inner-content {
+            display: flex;
+            margin-top: 30px;
+        }
+
+        .section-two .inner-form .inner-content label {
+            font-size: 16px;
             font-family: var(--font);
         }
 
-        .section-two .inner-middle .inner-image {
-            width: 90%;
-        }
-
-        .section-two .inner-middle .inner-image img {
-            width: 100%;
-        }
-
-        .section-two .inner-middle .inner-item .information-1 {
-            width: calc(100% - 155px);
-            /* điều chỉnh độ rộng của input */
-            padding: 5px;
-            margin-bottom: 10px;
+        .section-two .inner-form .inner-content input {
             border: none;
-            border-bottom: 1px solid #ccc;
-            border-radius: 0;
+            border-bottom: 1px solid #000;
+            width: 350px;
         }
 
-        .section-two .inner-middle .inner-item .information-1:focus {
+        .section-two .inner-form .inner-content input:focus {
             outline: none;
-            border-bottom: 2px solid #000;
         }
 
-        .section-two .inner-middle .inner-item .information-2 {
-            margin-left: 65px;
+        .section-two .inner-form .inner-info {
+            position: relative;
+            display: flex;
         }
 
-        .section-two .inner-middle .inner-item .information-2 .item-2 {
-            width: 60px;
-            padding: 5px;
-            margin-bottom: 10px;
+        .section-two .inner-form .inner-info .info {
+            margin-left: 50px;
+        }
+
+        .section-two .inner-form .inner-info .info input {
             border: none;
-            border-bottom: 1px solid #ccc;
-            border-radius: 0;
-            text-align: center;
+            border-bottom: 1px solid #000;
+            width: 50px;
         }
 
-        .section-two .inner-middle .inner-item .information-2 .item-2:focus {
-            outline: none;
-            border-bottom: 2px solid #000;
+        .section-two .inner-form .inner-info-2 {
+            display: flex;
+            justify-content: right;
+            margin-top: 30px;
         }
 
-        .section-two .inner-middle .inner-item .information-2 .separator {
-            display: inline-block;
-            transform: rotate(3deg);
-            margin-right: 5px;
-            margin-left: 5px;
+        .section-two .inner-form .inner-info-2 .info {
+            margin-left: 30px;
         }
 
-        .section-two .inner-middle .inner-item .information-3 {
-            margin-left: 200px;
-            margin-top: 20px;
+        .section-two .inner-form .inner-info-2 .info input[type="text"] {
+            border: none;
+            border-bottom: 1px solid #000;
+            width: 50px;
         }
 
-        .section-two .inner-middle .inner-item .information-3 input[type="radio"]:checked {
+        .section-two .inner-form .inner-info-2 .info input[type="radio"]:checked {
             accent-color: black;
         }
 
-        .section-two .inner-middle .button {
-            text-align: center;
-            padding: 10px 100px;
+        .section-two .inner-form a {
+            width: 100%;
             background: #1A291B;
-            text-transform: uppercase;
-            letter-spacing: 5px;
-            font-weight: 600px;
-        }
-
-        .section-two .inner-middle .button a {
             color: #fff;
+            margin-top: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
-        .section-two .inner-middle .inner-item .information-3 .item-3 {
-            width: 50px;
-            padding: 5px;
-            margin-bottom: 10px;
-            border: none;
-            border-bottom: 1px solid #ccc;
-            border-radius: 0;
-            text-align: center;
-        }
-
-        .section-two .inner-middle .inner-item .information-3 .item-3:focus {
-            outline: none;
-            border-bottom: 2px solid #000;
-        }
-
-        @media (max-width: 1199.98px) {
-            .section-two .inner-middle {
-                flex-wrap: wrap;
-                margin-left: 200px;
-            }
-
-            .section-two .inner-middle .inner-image {
-                width: 50%;
-            }
-        }
-
-        @media (max-width: 991.98px) {
-            .section-two .inner-middle {
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .section-two .inner-middle .inner-item .information-1 {
-                border-bottom: none;
-            }
-
-            .section-two .inner-middle .inner-item .information-1:focus {
-                outline: none;
-                border: none;
-            }
+        .section-two .inner-image img {
+            width: 100%;
         }
     </style>
+
     <div class="section-two">
         <div class="container">
             <div class="row">
-                <div class="inner-head">
-                    <div class="inner-title">
-                        Create Your Astrology Birth Chart
+                <div class="col-xl-12">
+                    <div class="inner-top">
+                        <div class="inner-title">Create Your Astrology Birth Chart</div>
+                        <p class="inner-desc">Create your free, personalized, and highly customizable birth chart (natal
+                            chart) by filling in the form below. Using our tools you can hide/show planets and
+                            asteroids, choose a house system, customize orbs, show declinations, sidereal charts and
+                            more...</p>
                     </div>
-                    <P class="inner-desc">
-                        Create your free, personalized, and highly customizable birth chart (natal chart) by filling in
-                        the form below. Using our tools you can hide/show planets and asteroids, choose a house system,
-                        customize orbs, show declinations, sidereal charts and more...
-                    </P>
                 </div>
-                <div class="inner-middle">
-                    <div class="col-xl-6 col-lg-8 col-md-10 col-sm-12 inner-item">
-                        <h2>FILL IN YOUR DETAILS</h2>
-                        <form>
-                            <label for="name">My name is:</label>
-                            <input class="information-1" type="text" id="name" name="name"><br><br>
+            </div>
+            <div class="row">
+                <div class="col-xl-6">
+                    <div class="inner-form">
+                        <h4>Fill in your details</h4>
+                        <form method="" action="">
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="inner-content">
+                                        <label for="name">My name is:</label>
+                                        <input type="text" id="name">
+                                    </div>
+                                </div>
+                                <div class="col-xl-12">
+                                    <div class="inner-content">
+                                        <label for="born">I was born in:</label>
+                                        <input type="text" id="name" placeholder="City, state, country">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="inner-content">
+                                    <div class="col-xl-4">
+                                        <div class="inner-title">
+                                            <label for="date">My date of birth is:</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-8">
+                                        <div class="inner-info">
+                                            <div class="info">
+                                                <input type="text" id="mm" placeholder="MM">
+                                            </div>
+                                            <div class="info">
+                                                <input type="text" id="dd" placeholder="DD">
+                                            </div>
+                                            <div class="info">
+                                                <input type="text" id="yyyy" placeholder="YYYY">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-                            <label for="birthplace">I was born in:</label>
-                            <input class="information-1" type="text" id="birthplace" name="birthplace"
-                                placeholder="City, state, country"><br><br>
-
-                            <label for="dob">My date of birth is:</label>
-                            <span class="information-2">
-                                <input class="item-2" type="text" placeholder="MM" maxlength="2" size="2" required>
-                                <div class="separator">/</div>
-                                <input class="item-2" type="text" placeholder="DD" maxlength="2" size="2" required>
-                                <div class="separator">/</div>
-                                <input class="item-2" type="text" placeholder="YYYY" maxlength="4" size="4" required>
-                            </span>
-
-                            <div class="information-3">
-                                <input class="item-3" type="text" placeholder="hh" maxlength="2" size="2" required>
-                                <span class="separator">:</span>
-                                <input class="item-3" type="text" placeholder="mm" maxlength="2" size="2" required>
-
-                                <input type="radio" id="am" name="ampm" value="AM">
-                                <label for="am">AM</label>
-                                <input type="radio" id="pm" name="ampm" value="PM" checked>
-                                <label for="pm">PM</label><br><br>
+                                <div class="col-xl-12">
+                                    <div class="inner-info-2">
+                                        <div class="info">
+                                            <input type="text" id="hh" placeholder="hh">
+                                        </div>
+                                        <div class="info">
+                                            <input type="text" id="mm" placeholder="mm">
+                                        </div>
+                                        <div class="info">
+                                            <input type="radio" id="am" name="ampm" value="AM">
+                                            <label for="am">AM</label>
+                                        </div>
+                                        <div class="info">
+                                            <input type="radio" id="pm" name="ampm" value="PM" checked>
+                                            <label for="pm">PM</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-12">
+                                    <a href="#" class="btn">Create Chart</a>
+                                </div>
                             </div>
                         </form>
-                        <div class="button">
-                            <a href="#">create chart</a>
-                        </div>
                     </div>
-                    <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 inner-item-2">
-                        <div class="inner-image">
-                            <img src="https://assets.astro-charts.com/site/illustration-form.webp" alt="">
-                        </div>
+                </div>
+                <div class="col-xl-6">
+                    <div class="inner-image">
+                        <img src="https://assets.astro-charts.com/site/illustration-form.webp" alt="">
                     </div>
                 </div>
             </div>
